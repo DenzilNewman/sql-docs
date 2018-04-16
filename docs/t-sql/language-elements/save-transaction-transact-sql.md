@@ -133,7 +133,7 @@ AS
             -- Transaction started before procedure  
             -- called, do not roll back modifications  
             -- made before the procedure was called.  
-            IF XACT_STATE() <> -1  
+            IF XACT_STATE() = 1  
                 -- If the transaction is still valid, just  
                 -- roll back to the savepoint set at the  
                 -- start of the stored procedure.  
